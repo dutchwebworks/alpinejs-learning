@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AlpineJS learing</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/lib/alpine.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+</head>
+<body>    
+    <div x-data="{}" class="container mx-auto m-6 p-6">
+        <div>            
+            <h1>AlpineJS learning</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut qui fugiat ducimus! Quibusdam, atque eligendi. Nobis nihil delectus repellendus commodi.</p>
+        </div>
+
+        <div x-data="{ isActive: false }">
+            <h2 class="">Toggling HTML aria-attributes</h2>
+            <div class="mt-4">
+                <button 
+                    @click="isActive = !isActive"
+                    id="expanding-button"
+                    aria-controls="info"
+                    x-bind:aria-expanded="isActive ? 'true' : 'false'"
+                    class="py-4 px-6 border bg-blue-500 text-white rounded-full cursor-pointer">
+                    Toggle
+                </button>
+            </div>
+            
+            <div 
+                id="info"
+                x-bind:aria-hidden="!isActive ? 'true' : 'false'"
+                aria-labelledby="expanding-button"
+                class="aria-hidden:hidden mt-4 p-6 bg-blue-500 text-white rounded-xl">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut qui fugiat ducimus! Quibusdam, atque eligendi. Nobis nihil delectus repellendus commodi.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
