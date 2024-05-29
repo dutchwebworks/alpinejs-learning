@@ -20,7 +20,7 @@
     </script>
 </head>
 <body>    
-    <div x-data="{}" class="container mx-auto m-6 p-6">
+    <div class="container mx-auto m-6 p-6">
         <div>            
             <h1>AlpineJS learning</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut qui fugiat ducimus! Quibusdam, atque eligendi. Nobis nihil delectus repellendus commodi.</p>
@@ -28,6 +28,7 @@
 
         <div x-data="{ isActive: false }">
             <h2 class="">Toggling HTML aria-attributes</h2>
+
             <div class="mt-4">
                 <button 
                     @click="isActive = !isActive"
@@ -41,7 +42,7 @@
             
             <div 
                 id="info"
-                x-bind:aria-hidden="!isActive ? 'true' : 'false'"
+                x-bind:aria-hidden="isActive ? 'false' : 'true'"
                 aria-labelledby="expanding-button"
                 class="aria-hidden:hidden mt-4 p-6 bg-blue-500 text-white rounded-xl">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut qui fugiat ducimus! Quibusdam, atque eligendi. Nobis nihil delectus repellendus commodi.</p>
